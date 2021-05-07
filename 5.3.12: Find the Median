@@ -1,0 +1,15 @@
+public double median(int[] arr)
+{
+    Arrays.sort(arr);
+
+    // even, return the average of the middle values
+    if(arr.length % 2 == 0)
+    {
+        int idx1 = arr.length / 2;
+        int idx0 = idx1 - 1;
+        return (arr[idx0] + arr[idx1]) / 2.0;
+    }
+
+    // odd, return the middle value
+    return arr[arr.length / 2];
+}
