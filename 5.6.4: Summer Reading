@@ -1,0 +1,52 @@
+public List<Book> filterBooks(List<Book> readingList, String author)
+{
+    // Remove all Books from the readingList that are not
+    for(int i = 0; i < readingList.size(); i++)
+    {
+        // Get the current book
+        Book currentBook = readingList.get(i);
+
+        // If the author is not the given author remove the Book
+        if(!currentBook.getAuthor().equals(author))
+        {
+            readingList.remove(i);
+            i--;
+        }
+    }
+
+    return readingList;
+}
+
+//Book Coding//
+
+public class Book
+{
+    private String title;
+    private String author;
+    
+    public Book(String theTitle, String theAuthor)
+    {
+        title = theTitle;
+        author = theAuthor;
+    }
+    
+    public String getTitle()
+    {
+        return title;
+    }
+    
+    public String getAuthor()
+    {
+        return author;
+    }
+    
+    public String toString()
+    {
+        return title + " by " + author;
+    }
+    
+    public boolean equals(Book other)
+    {
+        return title.equals(other.title) && author.equals(other.author);
+    }
+}
